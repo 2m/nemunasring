@@ -1,0 +1,12 @@
+name = "Nemunas Ring"
+page = "https://dvim.notion.site/Nemunas-Ring-f3e503f979c44b728bc0a9137506432b"
+
+[site]
+  [[site.meta]]
+  name = "title"
+  content = "Nemunas Ring"
+
+  [[site.meta]]
+  name = "description"
+  content = "Fan-made informational website about Nemunas Ring track and Lithuanian motorsport scene"
+
