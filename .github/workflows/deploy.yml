@@ -16,25 +16,20 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Submodule Update
-        run: |
-          git submodule update --init --recursive
-          git submodule update --remote
-
-      - name: Set up Python
-        uses: actions/setup-python@v2
+      - uses: addnab/docker-run-action@v3
         with:
-          python-version: 3.8
-
-      - name: Install and Run
-        run: |
-          cd ${GITHUB_WORKSPACE}/loconotion
-          pip install -r requirements.txt
-          python loconotion ../nemunas_ring.toml
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: gcr.io
+          image: 2m/loconotion:fix-docker-registry-2m
+          options: |
+            -v ${{ github.workspace }}/dist:/app/loconotion/dist
+            -v ${{ github.workspace }}:/app/loconotion/src
+          run: loconotion src/nemunas_ring.toml
 
       - name: Deploy to Pages
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
           branch: gh-pages
-          folder: loconotion/dist
+          folder: dist/Nemunas Ring
           clean: true
