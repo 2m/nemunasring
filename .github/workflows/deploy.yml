@@ -27,7 +27,8 @@ jobs:
           docker run
           -v ${{ github.workspace }}/dist:/app/loconotion/dist
           -v ${{ github.workspace }}:/app/loconotion/src
-          loconotion src/nemunas_ring.toml
+          ghcr.io/2m/loconotion:fix-docker-registry-2m
+          src/nemunas_ring.toml
 
       - name: Deploy to Pages
         uses: JamesIves/github-pages-deploy-action@v4.2.5
