@@ -10,3 +10,11 @@ page = "https://dvim.notion.site/Nemunas-Ring-f3e503f979c44b728bc0a9137506432b"
   name = "description"
   content = "Fan-made informational website about Nemunas Ring track and Lithuanian motorsport scene"
 
+  [[site.inject.body.script]]
+  type="text/javascript"
+  src="src/js/gtag.js"
+
+  [[site.inject.body.script]]
+  type="text/javascript"
+  src="src/js/ga.js"
+
