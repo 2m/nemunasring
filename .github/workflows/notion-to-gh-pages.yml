@@ -23,7 +23,7 @@ jobs:
           ghcr.io/2m/loconotion:fix-docker-registry-2m
           src/nemunasring.toml
 
-      - run: cp static/* dist/nemunasring/
+      - run: sudo cp static/* dist/nemunasring/
 
       - name: Deploy to Pages
         uses: JamesIves/github-pages-deploy-action@v4.2.5
