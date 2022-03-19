@@ -20,7 +20,7 @@ jobs:
           docker run
           -v ${{ github.workspace }}/dist:/app/loconotion/dist
           -v ${{ github.workspace }}:/app/loconotion/src
-          ghcr.io/2m/loconotion:fix-docker-registry-2m
+          ghcr.io/2m/loconotion:main
           src/nemunasring.toml
 
       - run: sudo cp static/* dist/nemunasring/
