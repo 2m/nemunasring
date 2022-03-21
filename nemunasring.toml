@@ -12,9 +12,15 @@ page = "https://dvim.notion.site/Nemunas-Ring-f3e503f979c44b728bc0a9137506432b"
 
   [[site.inject.body.script]]
   type="text/javascript"
-  src="src/js/gtag.js"
+  src="https://www.googletagmanager.com/gtag/js?id=G-GL48J6HDBQ"
+  async="true"
 
   [[site.inject.body.script]]
   type="text/javascript"
-  src="src/js/ga.js"
+  inner_html="""
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-GL48J6HDBQ');
+  """
 
